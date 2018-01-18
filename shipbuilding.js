@@ -7,7 +7,7 @@ function Part(part_name, mass, hp, cost, area) {
   this.XYPos = [null, null]; 
   function this.getPartText() {
     var raw_code = '{"pos":[' + String(this.XYPos[0]) + ',' + String(this.XYPos[1]) + '],"type":"' + this.part_name + '","dir":0}'; 
-    console.log(raw_code); 
+    console.log("code for " + this.part_name + " is: " + raw_code); 
     return raw_code; 
   } 
   function this.getCoordsOccupied() {
@@ -20,5 +20,7 @@ function Part(part_name, mass, hp, cost, area) {
         coords_occupied.append([scaledX, scaledY]) 
       } 
     } 
+    console.log(this.part_name + " occupies these coordinates: " + coords_occupied); 
     return coords_occupied; 
   } 
+} 
