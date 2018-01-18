@@ -10,8 +10,15 @@ function Part(name, mass, hp, cost, size) {
     console.log(raw_code); 
     return raw_code; 
   } 
-  /*function this.getCoordsOccupied() {
-    var coords_occupied = [null, null]; 
-    var xy_coords = this.getXYPos(); 
-  */ 
-} 
+  function this.getCoordsOccupied() {
+    var coords_occupied = []; 
+    var xy_center = this.getXYPos(); 
+    for(var x = 0; x < this.size[0]; x++) {
+      for(var y = 0; y < this.size[1]; y++) {
+        var scaledX = xy_center[0] + x * 20 - this.size[0] * 10 + 10; 
+        var scaledY = xy_center[1] + y * 20 - this.size[1] * 10 + 10; 
+        coords_occupied.append([scaledX, scaledY]) 
+      } 
+    } 
+    return coords_occupied; 
+  } 
